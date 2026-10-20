@@ -1,8 +1,27 @@
 # MovieLens Recommender Systems
 
-Project for comparing recommender-system algorithms on the `ml-latest-small` and
-`ml-latest` datasets.
+Team project for the Data Lab course at the Catholic University
+of Eichstätt-Ingolstadt, summer semester 2026.
 
+The project compares low-rank matrix completion methods for movie-rating
+prediction on the MovieLens `ml-latest-small` and `ml-latest` datasets:
+- Matrix factorization using gradient descent (GD), stochastic gradient
+  descent (SGD), and alternating least squares (ALS).
+- Hard and soft singular value thresholding.
+
+Experiments examine predictive performance, convergence, and computational
+efficiency, using sparse representations, Numba acceleration, and the
+Fritz HPC cluster.
+
+## Project report
+
+[Read the project report (PDF)](MovieLens_Recommender_Systems_Report.pdf)
+
+## Authors
+
+- Nikita Mykytenko
+- Oleksandr Bobryshev
+- Labeat Dobraj
 ## Repository structure
 
 ```text
@@ -30,6 +49,7 @@ Data-Lab-Submission/
 ├── hpc/
 │   ├── gd_*.slurm
 │   └── hard_thresholding_*.slurm
+├── MovieLens_Recommender_Systems_Report.pdf
 └── README.md
 ```
 
@@ -45,8 +65,7 @@ Data-Lab-Submission/
 5. `final_ml_latest_models.ipynb` — the same selection and final-evaluation
    workflow for ALS and SGD on `ml-latest`. These models were run on a personal
    computer.
-6. `model_comparison_graphs.ipynb` — generate the final model-comparison plots,
-   including that of the models ran on the Fritz HPC.
+6. `model_comparison_graphs.ipynb` — generate the final model-comparison plots, including those for models run on the Fritz HPC cluster.
 
 For `ml-latest`, Hard Thresholding and GD were run on the Fritz HPC cluster using the
 `hard_thresholding_*_hpc.ipynb` and `gd_*_hpc.ipynb` notebooks together with the
